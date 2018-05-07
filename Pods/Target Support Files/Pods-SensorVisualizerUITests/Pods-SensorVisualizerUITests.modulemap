@@ -1,0 +1,6 @@
+framework module Pods_SensorVisualizerUITests {
+  umbrella header "Pods-SensorVisualizerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

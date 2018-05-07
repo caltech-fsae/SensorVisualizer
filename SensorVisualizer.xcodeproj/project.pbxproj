@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2073FF3CCD1D6E35F5E4259C /* Pods_SensorVisualizerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0F993C0A4B4A6B6F0639B1 /* Pods_SensorVisualizerTests.framework */; };
+		78C571C703BC8E3497812D5A /* Pods_SensorVisualizerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF57E8782273DFA5A2C4C73 /* Pods_SensorVisualizerUITests.framework */; };
 		87E73E14209FA80300E501B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E13209FA80300E501B2 /* AppDelegate.swift */; };
-		87E73E16209FA80300E501B2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E15209FA80300E501B2 /* GameViewController.swift */; };
+		87E73E16209FA80300E501B2 /* CarVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E15209FA80300E501B2 /* CarVisualizationViewController.swift */; };
 		87E73E18209FA80300E501B2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E73E17209FA80300E501B2 /* art.scnassets */; };
 		87E73E1A209FA80500E501B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E73E19209FA80500E501B2 /* Assets.xcassets */; };
 		87E73E1D209FA80500E501B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E73E1B209FA80500E501B2 /* Main.storyboard */; };
 		87E73E29209FA80500E501B2 /* SensorVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E28209FA80500E501B2 /* SensorVisualizerTests.swift */; };
 		87E73E34209FA80500E501B2 /* SensorVisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E33209FA80500E501B2 /* SensorVisualizerUITests.swift */; };
+		87FDBBA1209FC25A009C4B22 /* SensorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA0209FC25A009C4B22 /* SensorDocument.swift */; };
+		87FDBBA3209FC67D009C4B22 /* CarVisualizationWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA2209FC67D009C4B22 /* CarVisualizationWindowController.swift */; };
+		87FDBBA5209FD158009C4B22 /* SensorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA4209FD158009C4B22 /* SensorNode.swift */; };
+		87FDBBA7209FD5A4009C4B22 /* sensors.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA6209FD5A3009C4B22 /* sensors.pb.swift */; };
+		A2F73694D090A393CBBE3129 /* Pods_SensorVisualizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8823079DDB0E28183A0AD8 /* Pods_SensorVisualizer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A8823079DDB0E28183A0AD8 /* Pods_SensorVisualizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80EDF3A5D27C81B9C9784942 /* Pods-SensorVisualizerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerUITests/Pods-SensorVisualizerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		845EB2358C011AFF2F4F1842 /* Pods-SensorVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
 		87E73E10209FA80300E501B2 /* SensorVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E73E13209FA80300E501B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87E73E15209FA80300E501B2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		87E73E15209FA80300E501B2 /* CarVisualizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarVisualizationViewController.swift; sourceTree = "<group>"; };
 		87E73E17209FA80300E501B2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		87E73E19209FA80500E501B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87E73E1C209FA80500E501B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +58,16 @@
 		87E73E2F209FA80500E501B2 /* SensorVisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorVisualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E73E33209FA80500E501B2 /* SensorVisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorVisualizerUITests.swift; sourceTree = "<group>"; };
 		87E73E35209FA80500E501B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87FDBBA0209FC25A009C4B22 /* SensorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDocument.swift; sourceTree = "<group>"; };
+		87FDBBA2209FC67D009C4B22 /* CarVisualizationWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarVisualizationWindowController.swift; sourceTree = "<group>"; };
+		87FDBBA4209FD158009C4B22 /* SensorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorNode.swift; sourceTree = "<group>"; };
+		87FDBBA6209FD5A3009C4B22 /* sensors.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sensors.pb.swift; sourceTree = "<group>"; };
+		A1F9D19D008F86F9FABC562E /* Pods-SensorVisualizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer.release.xcconfig"; sourceTree = "<group>"; };
+		BC36045C9C7DBA52667F18BF /* Pods-SensorVisualizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerTests/Pods-SensorVisualizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		D7868CC9D54314F51069F4A1 /* Pods-SensorVisualizerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerUITests/Pods-SensorVisualizerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EAF57E8782273DFA5A2C4C73 /* Pods_SensorVisualizerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0F993C0A4B4A6B6F0639B1 /* Pods_SensorVisualizerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD43DF6B2846932A159389B6 /* Pods-SensorVisualizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerTests/Pods-SensorVisualizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F73694D090A393CBBE3129 /* Pods_SensorVisualizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2073FF3CCD1D6E35F5E4259C /* Pods_SensorVisualizerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C571C703BC8E3497812D5A /* Pods_SensorVisualizerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +105,8 @@
 				87E73E27209FA80500E501B2 /* SensorVisualizerTests */,
 				87E73E32209FA80500E501B2 /* SensorVisualizerUITests */,
 				87E73E11209FA80300E501B2 /* Products */,
+				888847DE706E9824011B8E9D /* Pods */,
+				B48269B7E8EBA01A2DD64C0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +124,16 @@
 			isa = PBXGroup;
 			children = (
 				87E73E13209FA80300E501B2 /* AppDelegate.swift */,
-				87E73E15209FA80300E501B2 /* GameViewController.swift */,
+				87E73E15209FA80300E501B2 /* CarVisualizationViewController.swift */,
+				87FDBBA4209FD158009C4B22 /* SensorNode.swift */,
 				87E73E17209FA80300E501B2 /* art.scnassets */,
 				87E73E19209FA80500E501B2 /* Assets.xcassets */,
 				87E73E1B209FA80500E501B2 /* Main.storyboard */,
+				87FDBBA6209FD5A3009C4B22 /* sensors.pb.swift */,
 				87E73E1E209FA80500E501B2 /* Info.plist */,
 				87E73E1F209FA80500E501B2 /* SensorVisualizer.entitlements */,
+				87FDBBA0209FC25A009C4B22 /* SensorDocument.swift */,
+				87FDBBA2209FC67D009C4B22 /* CarVisualizationWindowController.swift */,
 			);
 			path = SensorVisualizer;
 			sourceTree = "<group>";
@@ -127,6 +156,29 @@
 			path = SensorVisualizerUITests;
 			sourceTree = "<group>";
 		};
+		888847DE706E9824011B8E9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				845EB2358C011AFF2F4F1842 /* Pods-SensorVisualizer.debug.xcconfig */,
+				A1F9D19D008F86F9FABC562E /* Pods-SensorVisualizer.release.xcconfig */,
+				FD43DF6B2846932A159389B6 /* Pods-SensorVisualizerTests.debug.xcconfig */,
+				BC36045C9C7DBA52667F18BF /* Pods-SensorVisualizerTests.release.xcconfig */,
+				D7868CC9D54314F51069F4A1 /* Pods-SensorVisualizerUITests.debug.xcconfig */,
+				80EDF3A5D27C81B9C9784942 /* Pods-SensorVisualizerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B48269B7E8EBA01A2DD64C0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A8823079DDB0E28183A0AD8 /* Pods_SensorVisualizer.framework */,
+				EF0F993C0A4B4A6B6F0639B1 /* Pods_SensorVisualizerTests.framework */,
+				EAF57E8782273DFA5A2C4C73 /* Pods_SensorVisualizerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87E73E38209FA80500E501B2 /* Build configuration list for PBXNativeTarget "SensorVisualizer" */;
 			buildPhases = (
+				92FBD31C92CF9CF7336F6523 /* [CP] Check Pods Manifest.lock */,
 				87E73E0C209FA80300E501B2 /* Sources */,
 				87E73E0D209FA80300E501B2 /* Frameworks */,
 				87E73E0E209FA80300E501B2 /* Resources */,
+				74C464DA4693108C077AAF1E /* [CP] Embed Pods Frameworks */,
+				34E20B4DFD33120E7A829D87 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87E73E3B209FA80500E501B2 /* Build configuration list for PBXNativeTarget "SensorVisualizerTests" */;
 			buildPhases = (
+				BF508D7FF7DA85199F2402DF /* [CP] Check Pods Manifest.lock */,
 				87E73E20209FA80500E501B2 /* Sources */,
 				87E73E21209FA80500E501B2 /* Frameworks */,
 				87E73E22209FA80500E501B2 /* Resources */,
+				A01EA079A663999E8A4BCC16 /* [CP] Embed Pods Frameworks */,
+				B16C82B60CFB29DD92C5797D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87E73E3E209FA80500E501B2 /* Build configuration list for PBXNativeTarget "SensorVisualizerUITests" */;
 			buildPhases = (
+				C94F0E1F15A60A6FD179883E /* [CP] Check Pods Manifest.lock */,
 				87E73E2B209FA80500E501B2 /* Sources */,
 				87E73E2C209FA80500E501B2 /* Frameworks */,
 				87E73E2D209FA80500E501B2 /* Resources */,
+				AE9F96CF459AA13D73E63B2C /* [CP] Embed Pods Frameworks */,
+				D14DD9E60E452F1A7AE68A0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +256,11 @@
 				TargetAttributes = {
 					87E73E0F209FA80300E501B2 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					87E73E23209FA80500E501B2 = {
 						CreatedOnToolsVersion = 9.3;
@@ -253,13 +319,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34E20B4DFD33120E7A829D87 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74C464DA4693108C077AAF1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92FBD31C92CF9CF7336F6523 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorVisualizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A01EA079A663999E8A4BCC16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizerTests/Pods-SensorVisualizerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE9F96CF459AA13D73E63B2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizerUITests/Pods-SensorVisualizerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B16C82B60CFB29DD92C5797D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizerTests/Pods-SensorVisualizerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF508D7FF7DA85199F2402DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorVisualizerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C94F0E1F15A60A6FD179883E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorVisualizerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14DD9E60E452F1A7AE68A0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizerUITests/Pods-SensorVisualizerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		87E73E0C209FA80300E501B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87E73E16209FA80300E501B2 /* GameViewController.swift in Sources */,
+				87FDBBA7209FD5A4009C4B22 /* sensors.pb.swift in Sources */,
+				87FDBBA5209FD158009C4B22 /* SensorNode.swift in Sources */,
+				87E73E16209FA80300E501B2 /* CarVisualizationViewController.swift in Sources */,
+				87FDBBA1209FC25A009C4B22 /* SensorDocument.swift in Sources */,
 				87E73E14209FA80300E501B2 /* AppDelegate.swift in Sources */,
+				87FDBBA3209FC67D009C4B22 /* CarVisualizationWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,9 +641,11 @@
 		};
 		87E73E39209FA80500E501B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 845EB2358C011AFF2F4F1842 /* Pods-SensorVisualizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SensorVisualizer/SensorVisualizer.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Y3R9B752X8;
@@ -434,15 +656,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrush.SensorVisualizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		87E73E3A209FA80500E501B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1F9D19D008F86F9FABC562E /* Pods-SensorVisualizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SensorVisualizer/SensorVisualizer.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Y3R9B752X8;
@@ -453,12 +678,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrush.SensorVisualizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 		87E73E3C209FA80500E501B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD43DF6B2846932A159389B6 /* Pods-SensorVisualizerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -480,6 +707,7 @@
 		};
 		87E73E3D209FA80500E501B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC36045C9C7DBA52667F18BF /* Pods-SensorVisualizerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +729,7 @@
 		};
 		87E73E3F209FA80500E501B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7868CC9D54314F51069F4A1 /* Pods-SensorVisualizerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +750,7 @@
 		};
 		87E73E40209FA80500E501B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80EDF3A5D27C81B9C9784942 /* Pods-SensorVisualizerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
