@@ -150,6 +150,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="uyl-h8-XO2"/>
+                                        <menuItem title="Add Sensor" id="gmO-3T-7TR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="8Rd-9h-tUm" kind="show" id="3tO-QG-e4w"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Add Random Sensor" id="so1-h9-0d6">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -219,7 +225,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="114" y="-145"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -240,7 +246,41 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="223" y="308"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="35s-zz-gTA">
+            <objects>
+                <windowController id="8Rd-9h-tUm" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Oef-VI-1h3">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="8Rd-9h-tUm" id="L5k-uB-Asv"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="3md-P0-nEX" kind="relationship" relationship="window.shadowedContentViewController" id="aUK-Ua-uh5"/>
+                    </connections>
+                </windowController>
+                <customObject id="7uA-YQ-VAW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="124"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aS7-Z7-gzv">
+            <objects>
+                <viewController id="3md-P0-nEX" sceneMemberID="viewController">
+                    <view key="view" id="IaR-2p-E33">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="lr5-kH-sFP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="609"/>
         </scene>
         <!--Car Visualization View Controller-->
         <scene sceneID="hIz-AP-VOD">
