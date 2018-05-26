@@ -61,6 +61,10 @@ class CarVisualizationViewController: NSViewController {
         }
     }
 
+    @IBAction func addSensor(sender: AnyObject) {
+        
+    }
+
     @IBAction func addRandomSensor(sender: AnyObject) {
         let sensor = generateRandomSensor()
         addSensorToCar(sensor: sensor)
