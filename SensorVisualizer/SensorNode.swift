@@ -19,7 +19,15 @@ class SensorNode: SCNNode {
 
         switch sensor.type {
         case .camera:
-            self.geometry = SCNSphere(radius: 1)
+            self.geometry = SCNSphere(radius: 0.25)
+            break
+        case .radar:
+            self.geometry = SCNCylinder(radius: 0.25, height: 0.25)
+            break
+        case .acceleration:
+            return
+        case .speed:
+            return
         }
 
         self.position = SCNVector3(sensor.translation.x,
