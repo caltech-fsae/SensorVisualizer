@@ -38,7 +38,7 @@ bool isInFOV(Point point, Sensor sensor) {
   tempPoint.x = point.x;
   tempPoint.y = point.y;
   tempPoint.z = point.z;
-  translate(tempPoint, -sensor.x, -sensor.y, -sensor.z);
+  translate(tempPoint, -sensor.translation.x, -sensor.translation.y, -sensor.translation.z);
   rotateAboutAxis(tempPoint, 0, -sensor.rotation.x);
   rotateAboutAxis(tempPoint, 0, -sensor.rotation.y);
   rotateAboutAxis(tempPoint, 0, -sensor.rotation.z);
