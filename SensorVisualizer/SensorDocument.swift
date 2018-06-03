@@ -20,7 +20,7 @@ class SensorDocument: NSDocument {
     }
 
     override func windowControllerDidLoadNib(_ aController: NSWindowController) {
-        
+
         super.windowControllerDidLoadNib(aController)
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
     }
@@ -32,7 +32,7 @@ class SensorDocument: NSDocument {
 
         return serialized
     }
-    
+
     override func read(from data: Data, ofType typeName: String) throws {
         guard let deserialized = try? Car(serializedData: data) else {
             throw NSError(domain: NSOSStatusErrorDomain, code: NSFileReadCorruptFileError, userInfo: nil)

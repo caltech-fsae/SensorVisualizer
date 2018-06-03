@@ -39,9 +39,9 @@ bool isInFOV(Point point, Sensor sensor) {
   tempPoint.y = point.y;
   tempPoint.z = point.z;
   translate(tempPoint, -sensor.x, -sensor.y, -sensor.z);
-  rotateAboutAxis(tempPoint, 0, -sensor.x_axis_rot);
-  rotateAboutAxis(tempPoint, 0, -sensor.y_axis_rot);
-  rotateAboutAxis(tempPoint, 0, -sensor.z_axis_rot);
+  rotateAboutAxis(tempPoint, 0, -sensor.rotation.x);
+  rotateAboutAxis(tempPoint, 0, -sensor.rotation.y);
+  rotateAboutAxis(tempPoint, 0, -sensor.rotation.z);
   // Now we have the coordinates of the point in the camera's ref frame
   //Assume that the z-axis points forward
   if (z < 0) { //Behind the camera
