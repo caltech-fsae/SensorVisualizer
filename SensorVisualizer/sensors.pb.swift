@@ -26,6 +26,8 @@ struct Car {
 
   var sensors: [Sensor] = []
 
+  var obstacles: [Obstacle] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -401,6 +403,7 @@ extension Car: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, 
   static let protoMessageName: String = "Car"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sensors"),
+    2: .same(proto: "obstacles"),
   ]
 
   public var isInitialized: Bool {
@@ -412,6 +415,7 @@ extension Car: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, 
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.sensors)
+      case 2: try decoder.decodeRepeatedMessageField(value: &self.obstacles)
       default: break
       }
     }
@@ -421,11 +425,15 @@ extension Car: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, 
     if !self.sensors.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.sensors, fieldNumber: 1)
     }
+    if !self.obstacles.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.obstacles, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   func _protobuf_generated_isEqualTo(other: Car) -> Bool {
     if self.sensors != other.sensors {return false}
+    if self.obstacles != other.obstacles {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

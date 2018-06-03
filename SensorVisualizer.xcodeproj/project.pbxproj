@@ -660,7 +660,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Y3R9B752X8;
+				DEVELOPMENT_TEAM = V594DKC83B;
 				INFOPLIST_FILE = SensorVisualizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -682,7 +682,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Y3R9B752X8;
+				DEVELOPMENT_TEAM = V594DKC83B;
 				INFOPLIST_FILE = SensorVisualizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

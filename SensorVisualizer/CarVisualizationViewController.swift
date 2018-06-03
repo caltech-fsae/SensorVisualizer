@@ -23,6 +23,7 @@ class CarVisualizationViewController: NSViewController {
     }
 
     var sensors:[SensorNode] = []
+    var obstacles:[ObstacleNode] = []
     var coneArea: SCNNode?
 
     override func viewDidLoad() {
@@ -72,9 +73,9 @@ class CarVisualizationViewController: NSViewController {
 
     func generateRandomSensor() -> Sensor {
         let translate = Sensor.Translate.with {
-            $0.x = 5 * (drand48() - 0.5)
-            $0.y = drand48()
-            $0.z = 3  * (drand48() - 0.5)
+            $0.x = 0
+            $0.y = 5
+            $0.z = 1
         }
 
         let sensor = Sensor.with {
@@ -89,7 +90,7 @@ class CarVisualizationViewController: NSViewController {
 
         return sensor
     }
-
+    
     func addSensorToCar(sensor: Sensor) {
         guard let document = currentDoc else {
             return
@@ -104,6 +105,47 @@ class CarVisualizationViewController: NSViewController {
         self.scnView.scene!.rootNode.addChildNode(node)
         sensors.append(node)
     }
+    
+    @IBAction func addRandomObstacle(sender: AnyObject) {
+        let obstacle = generateRandomObstacle()
+        addObstacleToCar(obstacle: obstacle)
+    }
+    
+    func generateRandomObstacle() -> Obstacle {
+        let translate = Obstacle.Translate.with {
+            $0.x = 0
+            $0.y = 5
+            $0.z = 1
+        }
+        
+        let sizes = Obstacle.Size.with {
+            $0.radius = 0.4
+            $0.height = 1.5
+        }
+        
+        let obstacle = Obstacle.with {
+            $0.translation = translate
+            $0.size = sizes
+        }
+        
+        return obstacle
+    }
+    
+    func addObstacleToCar(obstacle: Obstacle) {
+        guard let document = currentDoc else {
+            return
+        }
+        
+        document.car!.obstacles.append(obstacle)
+        addObstacleToView(obstacle: obstacle)
+    }
+
+    func addObstacleToView(obstacle: Obstacle) {
+        let node = ObstacleNode(obstacle: obstacle)
+        self.scnView.scene!.rootNode.addChildNode(node)
+        obstacles.append(node)
+    }
+
 
 //    func panCamera(translation: CGPoint) {
 //        let cameraTransform = scnView.pointOfView?.transform
@@ -135,6 +177,21 @@ class CarVisualizationViewController: NSViewController {
         let node = result.node
 
         guard let sensorNode = node as? SensorNode else {
+            guard let obstacleNode = node as? ObstacleNode else {
+                return false
+            }
+            
+            let depth = scnView.projectPoint(obstacleNode.position).z
+            let position = scnView.unprojectPoint(SCNVector3(x: p.x, y: p.y, z: depth))
+            obstacleNode.position = position
+            obstacleNode.obstacle!.translation.x = Double(position.x)
+            obstacleNode.obstacle!.translation.y = Double(position.y)
+            obstacleNode.obstacle!.translation.z = Double(position.z)
+            
+            currentDoc?.car?.obstacles = []
+            for node in obstacles {
+                currentDoc?.car?.obstacles.append(node.obstacle!)
+            }
             return false
         }
 
