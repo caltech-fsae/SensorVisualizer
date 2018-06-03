@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2073FF3CCD1D6E35F5E4259C /* Pods_SensorVisualizerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0F993C0A4B4A6B6F0639B1 /* Pods_SensorVisualizerTests.framework */; };
 		78C571C703BC8E3497812D5A /* Pods_SensorVisualizerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF57E8782273DFA5A2C4C73 /* Pods_SensorVisualizerUITests.framework */; };
+		87D42BAA20B9EA8A0062DBA4 /* NewSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D42BA920B9EA8A0062DBA4 /* NewSensorViewController.swift */; };
+		87D42BB020B9EE460062DBA4 /* sensors.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D42BAF20B9EE460062DBA4 /* sensors.pb.swift */; };
 		87E73E14209FA80300E501B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E13209FA80300E501B2 /* AppDelegate.swift */; };
 		87E73E16209FA80300E501B2 /* CarVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73E15209FA80300E501B2 /* CarVisualizationViewController.swift */; };
 		87E73E18209FA80300E501B2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E73E17209FA80300E501B2 /* art.scnassets */; };
@@ -19,7 +21,6 @@
 		87FDBBA1209FC25A009C4B22 /* SensorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA0209FC25A009C4B22 /* SensorDocument.swift */; };
 		87FDBBA3209FC67D009C4B22 /* CarVisualizationWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA2209FC67D009C4B22 /* CarVisualizationWindowController.swift */; };
 		87FDBBA5209FD158009C4B22 /* SensorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA4209FD158009C4B22 /* SensorNode.swift */; };
-		87FDBBA7209FD5A4009C4B22 /* sensors.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDBBA6209FD5A3009C4B22 /* sensors.pb.swift */; };
 		A2F73694D090A393CBBE3129 /* Pods_SensorVisualizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8823079DDB0E28183A0AD8 /* Pods_SensorVisualizer.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		6A8823079DDB0E28183A0AD8 /* Pods_SensorVisualizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EDF3A5D27C81B9C9784942 /* Pods-SensorVisualizerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerUITests/Pods-SensorVisualizerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		845EB2358C011AFF2F4F1842 /* Pods-SensorVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
+		87D42BA920B9EA8A0062DBA4 /* NewSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSensorViewController.swift; sourceTree = "<group>"; };
+		87D42BAF20B9EE460062DBA4 /* sensors.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sensors.pb.swift; sourceTree = "<group>"; };
 		87E73E10209FA80300E501B2 /* SensorVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E73E13209FA80300E501B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87E73E15209FA80300E501B2 /* CarVisualizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarVisualizationViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		87FDBBA0209FC25A009C4B22 /* SensorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDocument.swift; sourceTree = "<group>"; };
 		87FDBBA2209FC67D009C4B22 /* CarVisualizationWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarVisualizationWindowController.swift; sourceTree = "<group>"; };
 		87FDBBA4209FD158009C4B22 /* SensorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorNode.swift; sourceTree = "<group>"; };
-		87FDBBA6209FD5A3009C4B22 /* sensors.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sensors.pb.swift; sourceTree = "<group>"; };
 		A1F9D19D008F86F9FABC562E /* Pods-SensorVisualizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer/Pods-SensorVisualizer.release.xcconfig"; sourceTree = "<group>"; };
 		BC36045C9C7DBA52667F18BF /* Pods-SensorVisualizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerTests/Pods-SensorVisualizerTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7868CC9D54314F51069F4A1 /* Pods-SensorVisualizerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizerUITests/Pods-SensorVisualizerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,13 +127,14 @@
 			children = (
 				87E73E13209FA80300E501B2 /* AppDelegate.swift */,
 				87E73E15209FA80300E501B2 /* CarVisualizationViewController.swift */,
+				87D42BA920B9EA8A0062DBA4 /* NewSensorViewController.swift */,
 				87FDBBA4209FD158009C4B22 /* SensorNode.swift */,
 				87E73E17209FA80300E501B2 /* art.scnassets */,
 				87E73E19209FA80500E501B2 /* Assets.xcassets */,
 				87E73E1B209FA80500E501B2 /* Main.storyboard */,
-				87FDBBA6209FD5A3009C4B22 /* sensors.pb.swift */,
 				87E73E1E209FA80500E501B2 /* Info.plist */,
 				87E73E1F209FA80500E501B2 /* SensorVisualizer.entitlements */,
+				87D42BAF20B9EE460062DBA4 /* sensors.pb.swift */,
 				87FDBBA0209FC25A009C4B22 /* SensorDocument.swift */,
 				87FDBBA2209FC67D009C4B22 /* CarVisualizationWindowController.swift */,
 			);
@@ -474,10 +477,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87FDBBA7209FD5A4009C4B22 /* sensors.pb.swift in Sources */,
 				87FDBBA5209FD158009C4B22 /* SensorNode.swift in Sources */,
+				87D42BAA20B9EA8A0062DBA4 /* NewSensorViewController.swift in Sources */,
 				87E73E16209FA80300E501B2 /* CarVisualizationViewController.swift in Sources */,
 				87FDBBA1209FC25A009C4B22 /* SensorDocument.swift in Sources */,
+				87D42BB020B9EE460062DBA4 /* sensors.pb.swift in Sources */,
 				87E73E14209FA80300E501B2 /* AppDelegate.swift in Sources */,
 				87FDBBA3209FC67D009C4B22 /* CarVisualizationWindowController.swift in Sources */,
 			);

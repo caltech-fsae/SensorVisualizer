@@ -150,10 +150,10 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="uyl-h8-XO2"/>
-                                        <menuItem title="Add Sensor" id="gmO-3T-7TR">
+                                        <menuItem title="Add Sensor" id="Ykb-8B-kca">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <segue destination="8Rd-9h-tUm" kind="show" id="3tO-QG-e4w"/>
+                                                <segue destination="2yL-Fp-i0n" kind="show" id="tXj-sE-JCS"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Add Random Sensor" id="so1-h9-0d6">
@@ -225,7 +225,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="-145"/>
+            <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -246,41 +246,54 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="308"/>
+            <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="35s-zz-gTA">
+        <!--New Sensor View Controller-->
+        <scene sceneID="T6t-pe-a9D">
             <objects>
-                <windowController id="8Rd-9h-tUm" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Oef-VI-1h3">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <connections>
-                            <outlet property="delegate" destination="8Rd-9h-tUm" id="L5k-uB-Asv"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="3md-P0-nEX" kind="relationship" relationship="window.shadowedContentViewController" id="aUK-Ua-uh5"/>
-                    </connections>
-                </windowController>
-                <customObject id="7uA-YQ-VAW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="852" y="124"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="aS7-Z7-gzv">
-            <objects>
-                <viewController id="3md-P0-nEX" sceneMemberID="viewController">
-                    <view key="view" id="IaR-2p-E33">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="2yL-Fp-i0n" customClass="NewSensorViewController" customModule="SensorVisualizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="YkL-VL-x5z">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="p83-S2-0wp">
+                                <rect key="frame" x="60" y="259" width="84" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="pWI-LG-ebT"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Sensor Type:" id="Hiy-KC-JIg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vmt-OP-Ea4">
+                                <rect key="frame" x="148" y="256" width="155" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="rCL-CD-Afa"/>
+                                    <constraint firstAttribute="height" constant="21" id="wTl-6t-8UR"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="sLY-GG-keG">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="6M6-AW-VrL"/>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Vmt-OP-Ea4" firstAttribute="centerX" secondItem="YkL-VL-x5z" secondAttribute="centerX" id="kpV-l2-R55"/>
+                            <constraint firstItem="Vmt-OP-Ea4" firstAttribute="leading" secondItem="p83-S2-0wp" secondAttribute="trailing" constant="8" id="lYW-J9-aZx"/>
+                            <constraint firstItem="Vmt-OP-Ea4" firstAttribute="top" secondItem="YkL-VL-x5z" secondAttribute="top" constant="20" id="mYs-KT-xne"/>
+                            <constraint firstItem="p83-S2-0wp" firstAttribute="top" secondItem="YkL-VL-x5z" secondAttribute="top" constant="20" id="pdJ-b0-j8S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sensorTypeButton" destination="Vmt-OP-Ea4" id="Gce-st-iox"/>
+                    </connections>
                 </viewController>
-                <customObject id="lr5-kH-sFP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="zIg-0e-9Z5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="609"/>
+            <point key="canvasLocation" x="803" y="295"/>
         </scene>
         <!--Car Visualization View Controller-->
         <scene sceneID="hIz-AP-VOD">

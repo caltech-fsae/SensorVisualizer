@@ -72,11 +72,41 @@ struct Sensor {
   /// Clears the value of `cameraParams`. Subsequent reads from it will return its default value.
   mutating func clearCameraParams() {_storage._cameraParams = nil}
 
+  var accelParams: Sensor.AccelParams {
+    get {return _storage._accelParams ?? Sensor.AccelParams()}
+    set {_uniqueStorage()._accelParams = newValue}
+  }
+  /// Returns true if `accelParams` has been explicitly set.
+  var hasAccelParams: Bool {return _storage._accelParams != nil}
+  /// Clears the value of `accelParams`. Subsequent reads from it will return its default value.
+  mutating func clearAccelParams() {_storage._accelParams = nil}
+
+  var speedParams: Sensor.SpeedParams {
+    get {return _storage._speedParams ?? Sensor.SpeedParams()}
+    set {_uniqueStorage()._speedParams = newValue}
+  }
+  /// Returns true if `speedParams` has been explicitly set.
+  var hasSpeedParams: Bool {return _storage._speedParams != nil}
+  /// Clears the value of `speedParams`. Subsequent reads from it will return its default value.
+  mutating func clearSpeedParams() {_storage._speedParams = nil}
+
+  var radarParams: Sensor.RadarParams {
+    get {return _storage._radarParams ?? Sensor.RadarParams()}
+    set {_uniqueStorage()._radarParams = newValue}
+  }
+  /// Returns true if `radarParams` has been explicitly set.
+  var hasRadarParams: Bool {return _storage._radarParams != nil}
+  /// Clears the value of `radarParams`. Subsequent reads from it will return its default value.
+  mutating func clearRadarParams() {_storage._radarParams = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   enum SensorType: SwiftProtobuf.Enum {
     typealias RawValue = Int
     case camera // = 0
+    case acceleration // = 1
+    case speed // = 2
+    case radar // = 3
 
     init() {
       self = .camera
@@ -85,6 +115,9 @@ struct Sensor {
     init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .camera
+      case 1: self = .acceleration
+      case 2: self = .speed
+      case 3: self = .radar
       default: return nil
       }
     }
@@ -92,6 +125,9 @@ struct Sensor {
     var rawValue: Int {
       switch self {
       case .camera: return 0
+      case .acceleration: return 1
+      case .speed: return 2
+      case .radar: return 3
       }
     }
 
@@ -213,6 +249,15 @@ struct Sensor {
     /// Clears the value of `imageSize`. Subsequent reads from it will return its default value.
     mutating func clearImageSize() {_storage._imageSize = nil}
 
+    var bitVal: Double {
+      get {return _storage._bitVal ?? 0}
+      set {_uniqueStorage()._bitVal = newValue}
+    }
+    /// Returns true if `bitVal` has been explicitly set.
+    var hasBitVal: Bool {return _storage._bitVal != nil}
+    /// Clears the value of `bitVal`. Subsequent reads from it will return its default value.
+    mutating func clearBitVal() {_storage._bitVal = nil}
+
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
     struct ImageSize {
@@ -249,6 +294,100 @@ struct Sensor {
     init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
+  }
+
+  struct AccelParams {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var accel: Double {
+      get {return _accel ?? 0}
+      set {_accel = newValue}
+    }
+    /// Returns true if `accel` has been explicitly set.
+    var hasAccel: Bool {return self._accel != nil}
+    /// Clears the value of `accel`. Subsequent reads from it will return its default value.
+    mutating func clearAccel() {self._accel = nil}
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+
+    fileprivate var _accel: Double? = nil
+  }
+
+  struct SpeedParams {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var speed: Double {
+      get {return _speed ?? 0}
+      set {_speed = newValue}
+    }
+    /// Returns true if `speed` has been explicitly set.
+    var hasSpeed: Bool {return self._speed != nil}
+    /// Clears the value of `speed`. Subsequent reads from it will return its default value.
+    mutating func clearSpeed() {self._speed = nil}
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+
+    fileprivate var _speed: Double? = nil
+  }
+
+  struct RadarParams {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var range: Double {
+      get {return _range ?? 0}
+      set {_range = newValue}
+    }
+    /// Returns true if `range` has been explicitly set.
+    var hasRange: Bool {return self._range != nil}
+    /// Clears the value of `range`. Subsequent reads from it will return its default value.
+    mutating func clearRange() {self._range = nil}
+
+    var responseTime: Double {
+      get {return _responseTime ?? 0}
+      set {_responseTime = newValue}
+    }
+    /// Returns true if `responseTime` has been explicitly set.
+    var hasResponseTime: Bool {return self._responseTime != nil}
+    /// Clears the value of `responseTime`. Subsequent reads from it will return its default value.
+    mutating func clearResponseTime() {self._responseTime = nil}
+
+    /// in degrees or radians
+    var beamX: Double {
+      get {return _beamX ?? 0}
+      set {_beamX = newValue}
+    }
+    /// Returns true if `beamX` has been explicitly set.
+    var hasBeamX: Bool {return self._beamX != nil}
+    /// Clears the value of `beamX`. Subsequent reads from it will return its default value.
+    mutating func clearBeamX() {self._beamX = nil}
+
+    var beamY: Double {
+      get {return _beamY ?? 0}
+      set {_beamY = newValue}
+    }
+    /// Returns true if `beamY` has been explicitly set.
+    var hasBeamY: Bool {return self._beamY != nil}
+    /// Clears the value of `beamY`. Subsequent reads from it will return its default value.
+    mutating func clearBeamY() {self._beamY = nil}
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+
+    fileprivate var _range: Double? = nil
+    fileprivate var _responseTime: Double? = nil
+    fileprivate var _beamX: Double? = nil
+    fileprivate var _beamY: Double? = nil
   }
 
   init() {}
@@ -299,6 +438,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
     2: .same(proto: "translation"),
     3: .same(proto: "rotation"),
     4: .standard(proto: "camera_params"),
+    5: .standard(proto: "accel_params"),
+    6: .standard(proto: "speed_params"),
+    7: .standard(proto: "radar_params"),
   ]
 
   fileprivate class _StorageClass {
@@ -306,6 +448,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
     var _translation: Sensor.Translate? = nil
     var _rotation: Sensor.Rotate? = nil
     var _cameraParams: Sensor.CameraParams? = nil
+    var _accelParams: Sensor.AccelParams? = nil
+    var _speedParams: Sensor.SpeedParams? = nil
+    var _radarParams: Sensor.RadarParams? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -316,6 +461,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
       _translation = source._translation
       _rotation = source._rotation
       _cameraParams = source._cameraParams
+      _accelParams = source._accelParams
+      _speedParams = source._speedParams
+      _radarParams = source._radarParams
     }
   }
 
@@ -330,6 +478,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
     return withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._type == nil {return false}
       if let v = _storage._cameraParams, !v.isInitialized {return false}
+      if let v = _storage._accelParams, !v.isInitialized {return false}
+      if let v = _storage._speedParams, !v.isInitialized {return false}
+      if let v = _storage._radarParams, !v.isInitialized {return false}
       return true
     }
   }
@@ -343,6 +494,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
         case 2: try decoder.decodeSingularMessageField(value: &_storage._translation)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._rotation)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._cameraParams)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._accelParams)
+        case 6: try decoder.decodeSingularMessageField(value: &_storage._speedParams)
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._radarParams)
         default: break
         }
       }
@@ -363,6 +517,15 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
       if let v = _storage._cameraParams {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       }
+      if let v = _storage._accelParams {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      }
+      if let v = _storage._speedParams {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      }
+      if let v = _storage._radarParams {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -376,6 +539,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
         if _storage._translation != other_storage._translation {return false}
         if _storage._rotation != other_storage._rotation {return false}
         if _storage._cameraParams != other_storage._cameraParams {return false}
+        if _storage._accelParams != other_storage._accelParams {return false}
+        if _storage._speedParams != other_storage._speedParams {return false}
+        if _storage._radarParams != other_storage._radarParams {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -388,6 +554,9 @@ extension Sensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBas
 extension Sensor.SensorType: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "CAMERA"),
+    1: .same(proto: "ACCELERATION"),
+    2: .same(proto: "SPEED"),
+    3: .same(proto: "RADAR"),
   ]
 }
 
@@ -479,12 +648,14 @@ extension Sensor.CameraParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     1: .same(proto: "fov"),
     2: .standard(proto: "focal_length"),
     3: .standard(proto: "image_size"),
+    4: .standard(proto: "bit_val"),
   ]
 
   fileprivate class _StorageClass {
     var _fov: Double? = nil
     var _focalLength: Double? = nil
     var _imageSize: Sensor.CameraParams.ImageSize? = nil
+    var _bitVal: Double? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -494,6 +665,7 @@ extension Sensor.CameraParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       _fov = source._fov
       _focalLength = source._focalLength
       _imageSize = source._imageSize
+      _bitVal = source._bitVal
     }
   }
 
@@ -509,6 +681,7 @@ extension Sensor.CameraParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if _storage._fov == nil {return false}
       if _storage._focalLength == nil {return false}
       if _storage._imageSize == nil {return false}
+      if _storage._bitVal == nil {return false}
       if let v = _storage._imageSize, !v.isInitialized {return false}
       return true
     }
@@ -522,6 +695,7 @@ extension Sensor.CameraParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         case 1: try decoder.decodeSingularDoubleField(value: &_storage._fov)
         case 2: try decoder.decodeSingularDoubleField(value: &_storage._focalLength)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._imageSize)
+        case 4: try decoder.decodeSingularDoubleField(value: &_storage._bitVal)
         default: break
         }
       }
@@ -539,6 +713,9 @@ extension Sensor.CameraParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if let v = _storage._imageSize {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
+      if let v = _storage._bitVal {
+        try visitor.visitSingularDoubleField(value: v, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -551,6 +728,7 @@ extension Sensor.CameraParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         if _storage._fov != other_storage._fov {return false}
         if _storage._focalLength != other_storage._focalLength {return false}
         if _storage._imageSize != other_storage._imageSize {return false}
+        if _storage._bitVal != other_storage._bitVal {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -596,6 +774,129 @@ extension Sensor.CameraParams.ImageSize: SwiftProtobuf.Message, SwiftProtobuf._M
   func _protobuf_generated_isEqualTo(other: Sensor.CameraParams.ImageSize) -> Bool {
     if self._width != other._width {return false}
     if self._height != other._height {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Sensor.AccelParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Sensor.protoMessageName + ".AccelParams"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "accel"),
+  ]
+
+  public var isInitialized: Bool {
+    if self._accel == nil {return false}
+    return true
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularDoubleField(value: &self._accel)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._accel {
+      try visitor.visitSingularDoubleField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  func _protobuf_generated_isEqualTo(other: Sensor.AccelParams) -> Bool {
+    if self._accel != other._accel {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Sensor.SpeedParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Sensor.protoMessageName + ".SpeedParams"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "speed"),
+  ]
+
+  public var isInitialized: Bool {
+    if self._speed == nil {return false}
+    return true
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularDoubleField(value: &self._speed)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._speed {
+      try visitor.visitSingularDoubleField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  func _protobuf_generated_isEqualTo(other: Sensor.SpeedParams) -> Bool {
+    if self._speed != other._speed {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Sensor.RadarParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Sensor.protoMessageName + ".RadarParams"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "range"),
+    2: .standard(proto: "response_time"),
+    3: .standard(proto: "beam_x"),
+    4: .standard(proto: "beam_y"),
+  ]
+
+  public var isInitialized: Bool {
+    if self._range == nil {return false}
+    if self._responseTime == nil {return false}
+    if self._beamX == nil {return false}
+    if self._beamY == nil {return false}
+    return true
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularDoubleField(value: &self._range)
+      case 2: try decoder.decodeSingularDoubleField(value: &self._responseTime)
+      case 3: try decoder.decodeSingularDoubleField(value: &self._beamX)
+      case 4: try decoder.decodeSingularDoubleField(value: &self._beamY)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._range {
+      try visitor.visitSingularDoubleField(value: v, fieldNumber: 1)
+    }
+    if let v = self._responseTime {
+      try visitor.visitSingularDoubleField(value: v, fieldNumber: 2)
+    }
+    if let v = self._beamX {
+      try visitor.visitSingularDoubleField(value: v, fieldNumber: 3)
+    }
+    if let v = self._beamY {
+      try visitor.visitSingularDoubleField(value: v, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  func _protobuf_generated_isEqualTo(other: Sensor.RadarParams) -> Bool {
+    if self._range != other._range {return false}
+    if self._responseTime != other._responseTime {return false}
+    if self._beamX != other._beamX {return false}
+    if self._beamY != other._beamY {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }
