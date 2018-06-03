@@ -1,0 +1,17 @@
+message Obstacle {
+
+    message Translate {
+        optional double x = 1;
+        optional double y = 2;
+        optional double z = 3;
+    }
+
+    message Size {
+        optional double height = 1;
+        optional double radius = 2;
+    }
+
+    optional Translate translation = 1;
+    optional Size size = 2;
+
+}
