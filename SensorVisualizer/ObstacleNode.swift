@@ -25,7 +25,8 @@ class ObstacleNode: SCNNode {
 
         let material = SCNMaterial()
         material.diffuse.contents = NSColor.systemRed
-        self.geometry = init(topRadius: 0.0, bottomRadius: obstacle.radius, height: obstacle.height)
+        self.geometry = SCNCone(topRadius: 0.0, bottomRadius: CGFloat(obstacle.size.radius),
+                                height: CGFloat(obstacle.size.height))
         self.geometry!.materials = [material]
     }
 
